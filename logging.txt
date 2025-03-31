@@ -1,0 +1,434 @@
+INFO:root:Anonymized telemetry enabled. See https://docs.browser-use.com/development/telemetry for more information.
+DEBUG:browser_use.utils:--create_param_model Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--create_param_model Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--create_param_model Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--create_param_model Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--create_param_model Execution time: 0.00 seconds
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:browser_use.utils:--create_action_model Execution time: 0.21 seconds
+DEBUG:browser_use.utils:--create_action_model Execution time: 0.00 seconds
+DEBUG:browser_use.agent.service:Version: 0.1.40, Source: pip
+/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/message_manager/views.py:59: LangChainBetaWarning: The function `load` is in beta. It is actively being worked on, so the API may change.
+  value['message'] = load(value['message'])
+DEBUG:browser_use.browser.browser:Initializing new browser
+DEBUG:browser_use.browser.context:Initializing new browser context with id: 34c13fc2-8547-4180-9abe-5c81988acfa7
+DEBUG:browser_use.utils:--init (agent) Execution time: 0.37 seconds
+INFO:browser_use.agent.service:🚀 Starting task: Compare the price of gpt-4o and DeepSeek-V3
+DEBUG:browser_use.agent.service:Version: 0.1.40, Source: pip
+INFO:browser_use.agent.service:📍 Step 1
+DEBUG:browser_use.utils:--get_state Execution time: 0.00 seconds
+DEBUG:browser_use.browser.context:Initializing browser context
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): eu.i.posthog.com:443
+DEBUG:urllib3.connectionpool:https://eu.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+DEBUG:browser_use.utils:--init (browser) Execution time: 2.37 seconds
+DEBUG:browser_use.browser.context:Created new page
+DEBUG:browser_use.utils:--initialize_session Execution time: 2.88 seconds
+DEBUG:browser_use.browser.context:Network stabilized for 0.5 seconds
+DEBUG:browser_use.browser.context:--Page loaded in 3.40 seconds, waiting for additional 0.00 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.07 seconds
+DEBUG:browser_use.dom.service:DOM Tree Building Performance Metrics:
+{
+  "buildDomTreeCalls": 0,
+  "timings": {
+    "buildDomTree": 0,
+    "highlightElement": 0,
+    "isInteractiveElement": 0,
+    "isElementVisible": 0,
+    "isTopElement": 0,
+    "isInExpandedViewport": 0,
+    "isTextNodeVisible": 0,
+    "getEffectiveScroll": 0
+  },
+  "cacheMetrics": {
+    "boundingRectCacheHits": 0,
+    "boundingRectCacheMisses": 0,
+    "computedStyleCacheHits": 0,
+    "computedStyleCacheMisses": 0,
+    "getBoundingClientRectTime": 0,
+    "getComputedStyleTime": 0,
+    "boundingRectHitRate": 0,
+    "computedStyleHitRate": 0,
+    "overallHitRate": 0
+  },
+  "nodeMetrics": {
+    "totalNodes": 1,
+    "processedNodes": 1,
+    "skippedNodes": 0
+  },
+  "buildDomTreeBreakdown": {
+    "totalTime": 0,
+    "totalSelfTime": 0,
+    "buildDomTreeCalls": 0,
+    "domOperations": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "domOperationCounts": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "timeInChildCalls": 0
+  }
+}
+DEBUG:browser_use.utils:--construct_dom_tree Execution time: 0.07 seconds
+DEBUG:browser_use.utils:--build_dom_tree Execution time: 0.10 seconds
+DEBUG:browser_use.utils:--get_clickable_elements Execution time: 0.10 seconds
+DEBUG:browser_use.utils:--take_screenshot Execution time: 1.96 seconds
+DEBUG:browser_use.utils:--get_tabs_info Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--clickable_elements_to_string Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--add_state_message Execution time: 0.00 seconds
+DEBUG:browser_use.agent.message_manager.service:Messages in history: 7:
+DEBUG:browser_use.agent.message_manager.service:SystemMessage - Token count: 1464
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 71
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 99
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 12
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 927
+DEBUG:browser_use.agent.message_manager.service:Total input tokens: 2583
+DEBUG:browser_use.utils:--get_messages Execution time: 0.00 seconds
+DEBUG:grpc._cython.cygrpc:Using AsyncIOEngine.POLLER as I/O engine
+INFO:browser_use.agent.service:🤷 Eval: Unknown - There are no interactive elements on the page, I need to search for something
+INFO:browser_use.agent.service:🧠 Memory: Starting with the new task. I have completed 2/10 steps
+INFO:browser_use.agent.service:🎯 Next goal: Search for gpt-4 price
+INFO:browser_use.agent.service:🛠️  Action 1/1: {"search_google":{"query":"gpt-4 price"}}
+DEBUG:browser_use.utils:--get_next_action (agent) Execution time: 3.37 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.01 seconds
+DEBUG:browser_use.utils:--act Execution time: 0.00 seconds
+ERROR:browser_use.agent.service:❌ Result failed 1/3 times:
+ Error executing action search_google: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+Stacktrace:
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 142, in execute_action
+    return await action.function(validated_params, **extra_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 74, in search_google
+    await page.goto(f'https://www.google.com/search?q={params.query}&udm=14')
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 8987, in goto
+    await self._impl_obj.goto(
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 378, in step
+    result: list[ActionResult] = await self.multi_act(model_output.action)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 668, in multi_act
+    result = await self.controller.act(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 524, in act
+    raise e
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 502, in act
+    result = await self.registry.execute_action(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 146, in execute_action
+    raise RuntimeError(f'Error executing action {action_name}: {str(e)}') from e
+RuntimeError: Error executing action search_google: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+
+DEBUG:browser_use.utils:--handle_step_error (agent) Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--step (agent) Execution time: 9.14 seconds
+INFO:browser_use.agent.service:📍 Step 2
+DEBUG:browser_use.utils:--get_state Execution time: 0.00 seconds
+DEBUG:browser_use.browser.context:Network stabilized for 0.5 seconds
+DEBUG:browser_use.browser.context:--Page loaded in 0.51 seconds, waiting for additional 0.00 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.01 seconds
+DEBUG:browser_use.dom.service:DOM Tree Building Performance Metrics:
+{
+  "buildDomTreeCalls": 0,
+  "timings": {
+    "buildDomTree": 0,
+    "highlightElement": 0,
+    "isInteractiveElement": 0,
+    "isElementVisible": 0,
+    "isTopElement": 0,
+    "isInExpandedViewport": 0,
+    "isTextNodeVisible": 0,
+    "getEffectiveScroll": 0
+  },
+  "cacheMetrics": {
+    "boundingRectCacheHits": 0,
+    "boundingRectCacheMisses": 0,
+    "computedStyleCacheHits": 0,
+    "computedStyleCacheMisses": 0,
+    "getBoundingClientRectTime": 0,
+    "getComputedStyleTime": 0,
+    "boundingRectHitRate": 0,
+    "computedStyleHitRate": 0,
+    "overallHitRate": 0
+  },
+  "nodeMetrics": {
+    "totalNodes": 1,
+    "processedNodes": 1,
+    "skippedNodes": 0
+  },
+  "buildDomTreeBreakdown": {
+    "totalTime": 0,
+    "totalSelfTime": 0,
+    "buildDomTreeCalls": 0,
+    "domOperations": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "domOperationCounts": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "timeInChildCalls": 0
+  }
+}
+DEBUG:browser_use.utils:--construct_dom_tree Execution time: 0.07 seconds
+DEBUG:browser_use.utils:--build_dom_tree Execution time: 0.09 seconds
+DEBUG:browser_use.utils:--get_clickable_elements Execution time: 0.09 seconds
+DEBUG:browser_use.utils:--take_screenshot Execution time: 0.14 seconds
+DEBUG:browser_use.utils:--get_tabs_info Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--clickable_elements_to_string Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--add_state_message Execution time: 0.00 seconds
+DEBUG:browser_use.agent.message_manager.service:Messages in history: 10:
+DEBUG:browser_use.agent.message_manager.service:SystemMessage - Token count: 1464
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 71
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 99
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 12
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 123
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 0
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 4
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 939
+DEBUG:browser_use.agent.message_manager.service:Total input tokens: 2722
+DEBUG:browser_use.utils:--get_messages Execution time: 0.00 seconds
+DEBUG:urllib3.connectionpool:https://eu.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+INFO:browser_use.agent.service:⚠ Eval: Failed - The page didn't load as expected
+INFO:browser_use.agent.service:🧠 Memory: Starting with the new task. I have completed 2/10 steps
+INFO:browser_use.agent.service:🎯 Next goal: Search for gpt-4 price
+INFO:browser_use.agent.service:🛠️  Action 1/1: {"search_google":{"query":"gpt-4 price"}}
+DEBUG:browser_use.utils:--get_next_action (agent) Execution time: 2.59 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.01 seconds
+DEBUG:browser_use.utils:--act Execution time: 0.00 seconds
+ERROR:browser_use.agent.service:❌ Result failed 2/3 times:
+ Error executing action search_google: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+Stacktrace:
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 142, in execute_action
+    return await action.function(validated_params, **extra_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 74, in search_google
+    await page.goto(f'https://www.google.com/search?q={params.query}&udm=14')
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 8987, in goto
+    await self._impl_obj.goto(
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 378, in step
+    result: list[ActionResult] = await self.multi_act(model_output.action)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 668, in multi_act
+    result = await self.controller.act(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 524, in act
+    raise e
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 502, in act
+    result = await self.registry.execute_action(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 146, in execute_action
+    raise RuntimeError(f'Error executing action {action_name}: {str(e)}') from e
+RuntimeError: Error executing action search_google: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+
+DEBUG:browser_use.utils:--handle_step_error (agent) Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--step (agent) Execution time: 3.45 seconds
+INFO:browser_use.agent.service:📍 Step 3
+DEBUG:browser_use.utils:--get_state Execution time: 0.00 seconds
+DEBUG:browser_use.browser.context:Network stabilized for 0.5 seconds
+DEBUG:browser_use.browser.context:--Page loaded in 0.51 seconds, waiting for additional 0.00 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.00 seconds
+DEBUG:browser_use.dom.service:DOM Tree Building Performance Metrics:
+{
+  "buildDomTreeCalls": 0,
+  "timings": {
+    "buildDomTree": 0,
+    "highlightElement": 0,
+    "isInteractiveElement": 0,
+    "isElementVisible": 0,
+    "isTopElement": 0,
+    "isInExpandedViewport": 0,
+    "isTextNodeVisible": 0,
+    "getEffectiveScroll": 0
+  },
+  "cacheMetrics": {
+    "boundingRectCacheHits": 0,
+    "boundingRectCacheMisses": 0,
+    "computedStyleCacheHits": 0,
+    "computedStyleCacheMisses": 0,
+    "getBoundingClientRectTime": 0,
+    "getComputedStyleTime": 0,
+    "boundingRectHitRate": 0,
+    "computedStyleHitRate": 0,
+    "overallHitRate": 0
+  },
+  "nodeMetrics": {
+    "totalNodes": 1,
+    "processedNodes": 1,
+    "skippedNodes": 0
+  },
+  "buildDomTreeBreakdown": {
+    "totalTime": 0,
+    "totalSelfTime": 0,
+    "buildDomTreeCalls": 0,
+    "domOperations": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "domOperationCounts": {
+      "getBoundingClientRect": 0,
+      "getComputedStyle": 0
+    },
+    "timeInChildCalls": 0
+  }
+}
+DEBUG:browser_use.utils:--construct_dom_tree Execution time: 0.06 seconds
+DEBUG:browser_use.utils:--build_dom_tree Execution time: 0.07 seconds
+DEBUG:browser_use.utils:--get_clickable_elements Execution time: 0.07 seconds
+DEBUG:browser_use.utils:--take_screenshot Execution time: 0.09 seconds
+DEBUG:browser_use.utils:--get_tabs_info Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--clickable_elements_to_string Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--add_state_message Execution time: 0.00 seconds
+DEBUG:browser_use.agent.message_manager.service:Messages in history: 13:
+DEBUG:browser_use.agent.message_manager.service:SystemMessage - Token count: 1464
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 71
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 99
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 5
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 12
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 123
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 0
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 4
+DEBUG:browser_use.agent.message_manager.service:AIMessage - Token count: 108
+DEBUG:browser_use.agent.message_manager.service:ToolMessage - Token count: 0
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 4
+DEBUG:browser_use.agent.message_manager.service:HumanMessage - Token count: 939
+DEBUG:browser_use.agent.message_manager.service:Total input tokens: 2834
+DEBUG:browser_use.utils:--get_messages Execution time: 0.00 seconds
+DEBUG:urllib3.connectionpool:https://eu.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+INFO:browser_use.agent.service:⚠ Eval: Failed - The page didn't load as expected
+INFO:browser_use.agent.service:🧠 Memory: Starting with the new task. I have completed 3/10 steps
+INFO:browser_use.agent.service:🎯 Next goal: Go to google.com to search for the prices
+INFO:browser_use.agent.service:🛠️  Action 1/1: {"go_to_url":{"url":"https://www.google.com"}}
+DEBUG:browser_use.utils:--get_next_action (agent) Execution time: 2.70 seconds
+DEBUG:browser_use.utils:--remove_highlights Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--act Execution time: 0.00 seconds
+ERROR:browser_use.agent.service:❌ Result failed 3/3 times:
+ Error executing action go_to_url: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/
+Call log:
+  - navigating to "https://www.google.com/", waiting until "load"
+
+Stacktrace:
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 142, in execute_action
+    return await action.function(validated_params, **extra_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 83, in go_to_url
+    await page.goto(params.url)
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 8987, in goto
+    await self._impl_obj.goto(
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/
+Call log:
+  - navigating to "https://www.google.com/", waiting until "load"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 378, in step
+    result: list[ActionResult] = await self.multi_act(model_output.action)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/service.py", line 668, in multi_act
+    result = await self.controller.act(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 524, in act
+    raise e
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/service.py", line 502, in act
+    result = await self.registry.execute_action(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/utils.py", line 36, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/controller/registry/service.py", line 146, in execute_action
+    raise RuntimeError(f'Error executing action {action_name}: {str(e)}') from e
+RuntimeError: Error executing action go_to_url: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/
+Call log:
+  - navigating to "https://www.google.com/", waiting until "load"
+
+
+DEBUG:browser_use.utils:--handle_step_error (agent) Execution time: 0.00 seconds
+DEBUG:browser_use.utils:--step (agent) Execution time: 3.48 seconds
+ERROR:browser_use.agent.service:❌ Stopping due to 3 consecutive failures
+DEBUG:browser_use.browser.context:Closing browser context
+DEBUG:browser_use.utils:--close Execution time: 0.05 seconds
+DEBUG:browser_use.utils:--run (agent) Execution time: 16.31 seconds
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): eu.i.posthog.com:443
+DEBUG:urllib3.connectionpool:https://eu.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15

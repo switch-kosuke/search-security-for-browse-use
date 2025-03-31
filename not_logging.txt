@@ -1,0 +1,36 @@
+INFO     [browser_use] BrowserUse logging setup complete with level info
+INFO     [root] Anonymized telemetry enabled. See https://docs.browser-use.com/development/telemetry for more information.
+/home/k230415017-kosuke/code/browse-use/venv/lib/python3.12/site-packages/browser_use/agent/message_manager/views.py:59: LangChainBetaWarning: The function `load` is in beta. It is actively being worked on, so the API may change.
+  value['message'] = load(value['message'])
+INFO     [agent] 🚀 Starting task: Compare the price of gpt-4o and DeepSeek-V3
+INFO     [agent] 📍 Step 1
+INFO     [agent] 🤷 Eval: Unknown - There are no interactive elements on the page, therefore I cannot click on company a
+INFO     [agent] 🧠 Memory: Starting with the new task. I have completed 2/10 steps.
+INFO     [agent] 🎯 Next goal: Search for gpt-4 price
+INFO     [agent] 🛠️  Action 1/1: {"search_google":{"query":"gpt-4 price"}}
+ERROR    [agent] ❌ Result failed 1/3 times:
+ Error executing action search_google: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4%20price&udm=14
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4%20price&udm=14", waiting until "load"
+
+INFO     [agent] 📍 Step 2
+INFO     [agent] ⚠ Eval: Failed - The page failed to load after searching for gpt-4 price
+INFO     [agent] 🧠 Memory: Starting with the new task. I have completed 3/10 steps.
+INFO     [agent] 🎯 Next goal: Search for gpt-4 price
+INFO     [agent] 🛠️  Action 1/1: {"go_to_url":{"url":"https://www.google.com/search?q=gpt-4+price"}}
+ERROR    [agent] ❌ Result failed 2/3 times:
+ Error executing action go_to_url: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4+price
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4+price", waiting until "load"
+
+INFO     [agent] 📍 Step 3
+INFO     [agent] ⚠ Eval: Failed - The page failed to load after searching for gpt-4 price
+INFO     [agent] 🧠 Memory: Starting with the new task. I have completed 4/10 steps.
+INFO     [agent] 🎯 Next goal: Search for gpt-4 price
+INFO     [agent] 🛠️  Action 1/1: {"go_to_url":{"url":"https://www.google.com/search?q=gpt-4+price"}}
+ERROR    [agent] ❌ Result failed 3/3 times:
+ Error executing action go_to_url: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://www.google.com/search?q=gpt-4+price
+Call log:
+  - navigating to "https://www.google.com/search?q=gpt-4+price", waiting until "load"
+
+ERROR    [agent] ❌ Stopping due to 3 consecutive failures
