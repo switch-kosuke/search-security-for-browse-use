@@ -46,6 +46,9 @@ LANGSMITH_PROJECT=""
 python main.py
 ```
 
+###シーケンス
+![fig](./image/image2.png)
+
 ## 実行結果
 langsmithに保管。
 
