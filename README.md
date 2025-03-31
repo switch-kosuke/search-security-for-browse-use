@@ -56,6 +56,42 @@ langsmithに保管。
 ![image](./image/image.png)
 
 どうしましょうねぇ。
+プロキシ環境では、セキュリティ関連の設定を全部外して、プロキシ設定すると上手くいったよ.  
+```python
+async def _setup_standard_browser(self, playwright: Playwright) -> PlaywrightBrowser:
+		"""Sets up and returns a Playwright Browser instance with anti-detection measures."""
+		browser = await playwright.chromium.launch(
+			# headless=self.config.headless,
+			headless=False,
+			# args=[
+			# 	'--no-sandbox',
+			# 	# '--disable-blink-features=AutomationControlled',
+			# 	'--disable-infobars',
+			# 	'--disable-background-timer-throttling',
+			# 	'--disable-popup-blocking',
+			# 	'--disable-backgrounding-occluded-windows',
+			# 	'--disable-renderer-backgrounding',
+			# 	'--disable-window-activation',
+			# 	'--disable-focus-on-load',
+			# 	'--no-first-run',
+			# 	'--no-default-browser-check',
+			# 	'--no-startup-window',
+			# 	'--window-position=0,0',
+			# 	# '--window-size=1280,1000',
+			# ]
+			# + self.disable_security_args
+			# + self.config.extra_chromium_args,
+			# proxy=self.config.proxy,
+			proxy={
+				"server": "domain",
+				"username": "kosuke.usui",
+				"password": "<password>"
+			}
+		)
+		# convert to Browser
+		return browser
+
+```
 
 ### バックエンドでロギングしている模様
 #### 経緯
