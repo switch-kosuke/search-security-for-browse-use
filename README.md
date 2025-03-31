@@ -19,7 +19,7 @@ load_dotenv()
 
 async def main():
     agent = Agent(
-        task="Compare the price of gpt-4o and DeepSeek-V3。もしプロキシ―設定が出たら、username=kosuke.usui",
+        task="Compare the price of gpt-4o and DeepSeek-V3。",
         llm=ChatOpenAI(model="gpt-4o"),
     )
     await agent.run()
@@ -32,11 +32,33 @@ LLMを変更する場合には、`llm=ChatOpenAI(model="gpt-4o")`を、[ここ�
 例えば、Gemini APIなら、[.env.example](./.env.sample)のようにAPIキーを作成する
 
 
+LLMの応答もロギングしておく.  
+[.env](./.env)ファイル内に、以下のlangsmithを設置。  
+```bash
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_API_KEY=""
+LANGSMITH_PROJECT=""
+```
+
 ## 実行
 ```bash
 python main.py
 ```
 
+## 実行結果
+langsmithに保管。
+
+## 蛇足
+
+### chromiumのプロキシ設定に引っ掛かって上手くいかない。
+
+![image](./image/image.png)
+
+どうしましょうねぇ。
+
+### バックエンドでロギングしている模様
+#### 経緯
 プロキシサーバーで引っ掛かったので、ついでにログを確認
 > (requests.exceptions.ProxyError: HTTPSConnectionPool(host='eu.i.posthog.com', port=443)
 
@@ -44,9 +66,8 @@ python main.py
 Posthog（ポストホッグ）は、ユーザーの行動を分析して、製品やサービスの改善に役立てるためのオープンソースの分析プラットフォームです.  
 
 つまり、ユーザーの検索ログがバックエンドで取られている模様。
-企業調査には使えませんね。
 
-## ネットワークを調査
+#### ネットワークを調査
 ロギングを追加してみる.  
 
 ```python 
@@ -71,34 +92,16 @@ posthogに関するコードを探すとここにあった。
 https://github.com/browser-use/browser-use/blob/main/browser_use/telemetry/service.py
 
 
-LLMにコードの内容を要約.  
-```txt
-何をしているコードか？
-このコードは、アプリの使い方を匿名で記録して送る仕組みを作っています。例えば、「ユーザーがどのボタンを押したか」とか「どの機能を使ったか」といった情報を収集して、Posthogというツールに送ります。
+`PROJECT_API_KEY = 'phc_F8JMNjW1i2KbGUTaW1unnDdLSPCoyc52SGRU0JecaUh'`  
+APIキーベタ打ちされてる。
 
-どういう仕組み？
-匿名のユーザーIDを作る
+## 対策
+調べてみると、[ここ](https://docs.browser-use.com/development/telemetry)に書いてあった。
 
-初めて使う人には、一意のID（例: 1234-5678-ABCD）を作って保存します。これで「誰が使ったか」はわからないけど、「同じ人が何回使ったか」はわかるようになります。
-イベントを記録する
-
-アプリのどんな操作が行われたかを「イベント」として記録します。例えば、「設定画面を開いた」や「検索ボタンを押した」など。
-Posthogに送る
-
-記録したイベントをPosthogに送信して、データを分析できるようにします。
-環境変数で設定を管理
-
-環境変数で「テレメトリをオンにするかオフにするか」「ログをどれくらい詳細に出すか」を切り替えられるようにしています。
-何に使える？
-アプリがどんなふうに使われているかを分析して、改善に役立てる。
-例えば、「この機能はほとんど使われてないから、もっと使いやすくしよう」とか「この画面でエラーがよく起きているから修正しよう」といった判断ができる。
-重要なポイント
-匿名化されているから、ユーザーのプライバシーは守られる。
-ただし、ユーザーに「データを収集しているよ」とちゃんと伝える必要がある。
-APIキーがコードに直接書いてあるのはちょっと危険なので、環境変数に移したほうがいい。
-簡単に言えば、「アプリの使い方を記録して送る仕組みを作るコード」です！
+```bash
+import os
+os.environ["ANONYMIZED_TELEMETRY"] = "false"
 ```
 
-面白いのがここ。
-`PROJECT_API_KEY = 'phc_F8JMNjW1i2KbGUTaW1unnDdLSPCoyc52SGRU0JecaUh'`  
-APIキーベタ打ち何ですよね(笑)
+にしてねとの事。
+
